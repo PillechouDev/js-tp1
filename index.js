@@ -5,6 +5,7 @@
  const p = document.createElement('p');
  const male = document.querySelector('#male');
  const female = document.querySelector('#female');
+
  var civil = "";
 
 
@@ -20,7 +21,8 @@
      else{
          alert('Veuillez selectionner un genre ! ');
      }
-     p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} `
+     const birth = new Date(document.querySelector('#birth'));
+     p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} , vous êtes née le ${birth.getTime} ${birth.getMonth} ${birth.getFullYear} `
  })
  
 
