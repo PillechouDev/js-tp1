@@ -5,6 +5,8 @@
  const p = document.createElement('p');
  const male = document.querySelector('#male');
  const female = document.querySelector('#female');
+ const mail1 = document.querySelector('#mail1');
+ const mail2 = document.querySelector('#mail2');
 
  var civil = "";
 
@@ -21,8 +23,16 @@
      else{
          alert('Veuillez selectionner un genre ! ');
      }
-     const birth = new Date(document.querySelector('#birth'));
-     p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} , vous êtes née le ${birth.getTime} ${birth.getMonth} ${birth.getFullYear} `
+     
+    const birth = new Date(document.querySelector('#birth').value);
+    if (mail1.value == mail2.value){
+        p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} , vous êtes née le ${birth} ${birth.getMonth} ${birth.getFullYear} `;
+
+    }
+    else {
+        p.innerText = `Les 2 emails ne correspondent pas `
+    }
+     
  })
  
 
