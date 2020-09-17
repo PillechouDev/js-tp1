@@ -10,6 +10,24 @@
 
  var civil = "";
 
+ class person {
+    constructor(name,firstname,gender,mail) {
+       this.name = name,
+       this.firstname = firstname,
+       this.gender = gender,
+       this.mail = mail
+    }
+
+
+   
+}
+
+
+if(localStorage.getItem('person')!= null){
+    
+
+}
+
 
  button.addEventListener('click', (event) => {
      
@@ -27,7 +45,7 @@
     const birth = new Date(document.querySelector('#birth').value);
     if (mail1.value == mail2.value){
         p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} , vous êtes née le ${birth} ${birth.getMonth} ${birth.getFullYear} `;
-
+        localStorage.setItem('person') = new person(name.value,firstname.value,civil,mail1.value);
     }
     else {
         p.innerText = `Les 2 emails ne correspondent pas `
@@ -37,3 +55,4 @@
  
 
  div.appendChild(p)
+
