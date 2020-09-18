@@ -38,6 +38,8 @@ if(localStorage.getItem('person')!= null){
         female.checked=true;
     }
     document.querySelector('#birth').value=body.birth;
+    mail1.value = body.mail;
+    mail2.value = body.mail;
 }
 else{
     console.log('localstorage empty');
@@ -57,7 +59,8 @@ else{
          alert('Veuillez selectionner un genre ! ');
      }
      
-    var birth = new Date(document.querySelector('#birth').value);
+    var birth = document.querySelector('#birth').value;
+    console.log(document.querySelector('#birth').value)
     if (mail1.value == mail2.value){
         p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} , vous êtes née le ${birth}`;
         body = new person(name.value,firstname.value,civil,mail1.value,birth);
