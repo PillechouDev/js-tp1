@@ -18,17 +18,13 @@
        this.mail = mail,
        this.birth = birth
     }
-    
-
-
    
 }
 
 
 if(localStorage.getItem('person')!= null){
     console.log('localStorage detected : ');
-    body = JSON.parse(localStorage.getItem('person'))
-    console.log(body);
+    body = JSON.parse(localStorage.getItem('person'));
     name.value = `${body.name}`;
     firstname.value =`${body.firstname}`;
     if (body.gender == "monsieur"){
@@ -60,7 +56,6 @@ else{
      }
      
     var birth = document.querySelector('#birth').value;
-    console.log(document.querySelector('#birth').value)
     if (mail1.value == mail2.value){
         p.innerText = `Bonjour ${civil} ${firstname.value} ${name.value} , vous êtes née le ${birth}`;
         body = new person(name.value,firstname.value,civil,mail1.value,birth);
